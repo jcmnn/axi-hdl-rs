@@ -52,6 +52,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "axi-dmac"
+version = "0.1.0"
+dependencies = [
+ "arbitrary-int",
+ "bitbybit",
+ "defmt",
+ "derive-mmio",
+ "static_assertions",
+ "thiserror",
+]
+
+[[package]]
 name = "axi-gpio"
 version = "0.1.0"
 dependencies = [

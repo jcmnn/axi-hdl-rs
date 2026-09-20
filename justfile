@@ -8,6 +8,7 @@ check:
     cargo check -p axi-uartlite --features portable-atomic
     cargo check -p axi-dma --features defmt
     cargo check -p axi-ad9361 --features defmt
+    cargo check -p axi-dmac --features defmt
     cargo check -p axi-uart16550 --features defmt
     cargo check -p axi-uartlite --features defmt
 
@@ -18,6 +19,7 @@ build:
     cargo build -p axi-uartlite --features portable-atomic
     cargo build -p axi-dma --features defmt
     cargo build -p axi-ad9361 --features defmt
+    cargo build -p axi-dmac --features defmt
     cargo build -p axi-uart16550 --features defmt
     cargo build -p axi-uartlite --features defmt
 

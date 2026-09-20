@@ -2,6 +2,7 @@
 resolver = "3"
 members = [
   "axi-ad9361",
+  "axi-dmac",
   "axi-uart16550",
   "axi-uartlite",
   "axi-dma",
