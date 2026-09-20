@@ -4,6 +4,7 @@ all: check build clippy check-fmt docs cross-check
 check:
     cargo check --workspace
     cargo check -p axi-dma --features portable-atomic
+    cargo check -p axi-dmac --features portable-atomic
     cargo check -p axi-uart16550 --features portable-atomic
     cargo check -p axi-uartlite --features portable-atomic
     cargo check -p axi-dma --features defmt
@@ -15,6 +16,7 @@ check:
 build:
     cargo build --workspace
     cargo build -p axi-dma --features portable-atomic
+    cargo build -p axi-dmac --features portable-atomic
     cargo build -p axi-uart16550 --features portable-atomic
     cargo build -p axi-uartlite --features portable-atomic
     cargo build -p axi-dma --features defmt

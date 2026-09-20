@@ -15,6 +15,7 @@ jobs:
       - uses: Swatinem/rust-cache@v2
       - run: cargo check --workspace
       - run: cargo check -p axi-dma --features portable-atomic
+      - run: cargo check -p axi-dmac --features portable-atomic
       - run: cargo check -p axi-uart16550 --features portable-atomic
       - run: cargo check -p axi-uartlite --features portable-atomic
       - run: cargo check -p axi-dma --features defmt
