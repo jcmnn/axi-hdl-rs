@@ -16,6 +16,7 @@ transceiver, exposing separate ADC and DAC datapaths.
   ADC and one DAC driver instance, each covering the register sub-block for that datapath.
 - ADC/DAC bring-up (reset, R1 mode, channel enable) and access to the shared, ADC and DAC
   register blocks.
+- DDS tones on the DAC, with typed frequency, phase and scale.
 
 # Features
 

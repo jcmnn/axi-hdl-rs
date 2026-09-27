@@ -17,6 +17,7 @@ use core::num::NonZero;
 pub mod adc;
 /// DAC driver.
 pub mod dac;
+pub mod dds;
 /// Raw register definitions.
 pub mod regs;
 
