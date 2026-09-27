@@ -266,7 +266,11 @@ impl Dac {
         let (_, actual) = phase_increment(frequency, sample_rate)?;
         for (lane, degrees) in [(IqLane::I, 90), (IqLane::Q, 0)] {
             let phase = DdsPhase::from_degrees(degrees);
-            let tone = DdsTone { frequency, phase, scale };
+            let tone = DdsTone {
+                frequency,
+                phase,
+                scale,
+            };
             self.set_dds(pair, lane, DdsGenerator::First, tone, sample_rate)?;
             self.set_dds(pair, lane, DdsGenerator::Second, DdsTone::OFF, sample_rate)?;
         }
@@ -291,7 +295,10 @@ mod tests {
     #[test]
     fn nyquist_is_rejected() {
         let fs = HertzU32::Hz(30_720_000);
-        assert_eq!(phase_increment(HertzU32::Hz(15_360_000), fs), Err(AboveNyquist));
+        assert_eq!(
+            phase_increment(HertzU32::Hz(15_360_000), fs),
+            Err(AboveNyquist)
+        );
         assert!(phase_increment(HertzU32::Hz(15_359_000), fs).is_ok());
     }
 
@@ -337,6 +344,10 @@ mod tests {
         let q = dac.channel_mut(u4::new(3));
         assert_eq!(q.read_control2(), 5120);
         assert_eq!(q.read_control1(), 0x2000);
-        assert_eq!(dac.channel_mut(u4::new(0)).read_control1(), 0, "TX1 untouched");
+        assert_eq!(
+            dac.channel_mut(u4::new(0)).read_control1(),
+            0,
+            "TX1 untouched"
+        );
     }
 }
